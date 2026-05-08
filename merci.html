@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Merci</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:30px;
+
+font-family:'Inter',sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#050505 0%,
+#0d0a08 40%,
+#18120d 100%
+);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+/* LIGHT EFFECTS */
+
+body::before{
+
+content:'';
+
+position:absolute;
+
+top:-200px;
+left:-180px;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,150,70,0.18),
+transparent 70%
+);
+
+pointer-events:none;
+
+}
+
+body::after{
+
+content:'';
+
+position:absolute;
+
+right:-180px;
+bottom:-180px;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,190,120,0.12),
+transparent 70%
+);
+
+pointer-events:none;
+
+}
+
+/* CARD */
+
+.card{
+
+position:relative;
+z-index:2;
+
+width:100%;
+max-width:850px;
+
+padding:60px 40px;
+
+border-radius:40px;
+
+text-align:center;
+
+background:
+rgba(255,255,255,0.05);
+
+backdrop-filter:blur(18px);
+
+border:
+1px solid rgba(255,190,120,0.12);
+
+box-shadow:
+0 0 45px rgba(0,0,0,0.35);
+
+animation:fadeUp 0.9s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+width:170px;
+max-width:80%;
+
+border-radius:30px;
+
+padding:10px;
+
+background:
+rgba(255,255,255,0.05);
+
+border:
+1px solid rgba(255,190,120,0.10);
+
+box-shadow:
+0 0 35px rgba(255,145,70,0.15);
+
+margin-bottom:35px;
+
+}
+
+.check{
+
+font-size:85px;
+margin-bottom:20px;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:78px;
+line-height:0.95;
+
+color:#fff0e2;
+
+margin-bottom:25px;
+
+text-shadow:
+0 0 18px rgba(255,170,90,0.10);
+
+}
+
+.message{
+
+font-size:20px;
+
+color:#eadbce;
+
+max-width:700px;
+
+margin:auto;
+margin-bottom:35px;
+
+line-height:1.9;
+
+}
+
+.info-box{
+
+background:
+rgba(255,255,255,0.04);
+
+padding:28px;
+
+border-radius:28px;
+
+border:
+1px solid rgba(255,190,120,0.08);
+
+margin-top:25px;
+
+color:#f1e5db;
+
+font-size:17px;
+
+line-height:2;
+
+}
+
+/* BUTTONS */
+
+.buttons{
+
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+
+margin-top:40px;
+
+}
+
+.btn{
+
+padding:18px 34px;
+
+border-radius:60px;
+
+text-decoration:none;
+
+font-weight:700;
+font-size:16px;
+
+transition:0.35s;
+
+}
+
+.btn-primary{
+
+background:
+linear-gradient(
+135deg,
+#ffb072,
+#8f5632
+);
+
+color:white;
+
+box-shadow:
+0 0 30px rgba(255,145,70,0.28);
+
+}
+
+.btn-primary:hover{
+
+transform:
+translateY(-5px)
+scale(1.03);
+
+}
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,0.06);
+
+backdrop-filter:blur(10px);
+
+border:
+1px solid rgba(255,255,255,0.08);
+
+color:#ffe6d4;
+
+}
+
+.btn-secondary:hover{
+
+transform:
+translateY(-5px);
+
+background:
+rgba(255,190,120,0.10);
+
+}
+
+.footer-text{
+
+margin-top:40px;
+
+font-size:14px;
+
+color:#c9b8aa;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.card{
+
+padding:45px 25px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+.message{
+
+font-size:18px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.btn{
+
+width:100%;
+max-width:320px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="logo.png" class="logo">
+
+<div class="check">
+✅
+</div>
+
+<h1>
+
+Merci
+
+</h1>
+
+<div class="message">
+
+Votre demande a bien été envoyée.
+
+Nous vous remercions pour votre confiance.
+Votre formulaire ou votre paiement
+sera analysé avec attention
+dans le respect total de la confidentialité.
+
+</div>
+
+<div class="info-box">
+
+🧠 Pré-diagnostic psychologique confidentiel<br>
+
+📅 Les rendez-vous sont traités uniquement en ligne<br>
+
+⏳ Un retour vous sera envoyé après validation<br>
+
+🔒 Toutes les informations restent strictement privées
+
+</div>
+
+<div class="buttons">
+
+<a href="index.html"
+class="btn btn-primary">
+
+Retour à l'accueil
+
+</a>
+
+<a href="formulaire.html"
+class="btn btn-secondary">
+
+Nouveau formulaire
+
+</a>
+
+</div>
+
+<div class="footer-text">
+
+© Centre d'écoute & d'accompagnement psychologique
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Caisse & Paiement</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#edf4f1;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:600px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:120px;
+}
+
+h1{
+    text-align:center;
+    color:#1f5e4d;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #d7e1dd;
+    box-sizing:border-box;
+    margin-bottom:18px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.payment-box{
+    background:#f5faf8;
+    border-radius:18px;
+    padding:20px;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.total{
+    background:#1f5e4d;
+    color:#fff;
+    padding:18px;
+    border-radius:16px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+button{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:18px;
+    background:#1f5e4d;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.note{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+    <img src="logo.png" alt="Logo">
+</div>
+
+<h1>💳 Caisse & Paiement</h1>
+
+<div class="subtitle">
+Paiement simple pour consultation,
+traitement ou autres prestations.
+</div>
+
+<form action="https://formsubmit.co/myteamsmadagascar@gmail.com"
+method="POST"
+enctype="multipart/form-data">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="merci.html">
+<input type="hidden" name="_subject" value="Nouveau paiement caisse">
+
+<input type="text"
+name="Nom client"
+placeholder="Nom du client"
+required>
+
+<select name="Type paiement">
+
+<option>Consultation</option>
+<option>Traitement</option>
+<option>Suivi psychologique</option>
+<option>Séance supplémentaire</option>
+<option>Autre</option>
+
+</select>
+
+<input type="number"
+name="Montant"
+placeholder="Montant payé (Ar)"
+required>
+
+<textarea
+name="Description"
+placeholder="Description ou remarque"></textarea>
+
+<div class="payment-box">
+
+👤 <strong>Bénéficiaire :</strong> Finiavana <br><br>
+
+📱 Orange Money :
+032 60 964 49 <br><br>
+
+📱 Airtel Money :
+033 29 430 07 <br><br>
+
+📱 Mvola :
+038 19 191 34
+
+</div>
+
+<input type="text"
+name="Référence transaction"
+placeholder="Référence de transaction">
+
+<label>📤 Capture de paiement</label>
+
+<input type="file"
+name="Preuve paiement"
+accept="image/*,.pdf">
+
+<div class="total">
+🧾 Paiement validé à la caisse
+</div>
+
+<button type="submit">
+💰 VALIDER LE PAIEMENT
+</button>
+
+</form>
+
+<div class="note">
+🔒 Paiement confidentiel et sécurisé.
+</div>
+
+</div>
+
+</body>
+</html>

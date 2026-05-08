@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pré-diagnostic psychologique</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#edf4f1;
+    font-family:Arial,sans-serif;
+    color:#1f1f1f;
+}
+
+.container{
+    max-width:1000px;
+    margin:25px auto;
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    width:120px;
+    margin:auto;
+}
+
+.logo img{
+    width:100%;
+}
+
+h1{
+    color:#1f5e4d;
+    margin-top:15px;
+}
+
+.subtitle{
+    color:#666;
+    line-height:1.7;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#dce9e4;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:35px;
+}
+
+.progress-bar{
+    height:100%;
+    width:10%;
+    background:linear-gradient(90deg,#1f5e4d,#4cc38a);
+    transition:0.3s;
+}
+
+.step{
+    display:none;
+    animation:fade .4s ease;
+}
+
+.step.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #d7e1dd;
+    box-sizing:border-box;
+    font-size:15px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.navigation{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+button{
+    flex:1;
+    border:none;
+    padding:17px;
+    border-radius:16px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.prev-btn{
+    background:#dde8e4;
+    color:#24463d;
+}
+
+.next-btn,
+.submit-btn,
+.receipt-btn{
+    background:#1f5e4d;
+    color:#fff;
+}
+
+.summary,
+.payment-box{
+    background:#f5faf8;
+    padding:25px;
+    border-radius:18px;
+    line-height:2;
+    margin-top:20px;
+}
+
+.receipt{
+    background:#fff;
+    border:2px dashed #1f5e4d;
+    border-radius:18px;
+    padding:25px;
+    margin-top:25px;
+}
+
+.receipt h2{
+    text-align:center;
+    color:#1f5e4d;
+}
+
+.receipt-item{
+    margin-bottom:12px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e5f7ef;
+    color:#1f5e4d;
+    padding:8px 14px;
+    border-radius:30px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.note{
+    margin-top:20px;
+    background:#fff7e6;
+    border-left:5px solid #ffb300;
+    padding:15px;
+    border-radius:10px;
+    color:#7a5a00;
+    line-height:1.7;
+}
+
+.confidentiel{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+}
+
+h3{
+    color:#24463d;
+}
+
+@media(max-width:700px){
+
+.container{
+    margin:10px;
+    padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div class="logo">
+<img src="logo.png" alt="Logo">
+</div>
+
+<h1>Pré-diagnostic psychologique</h1>
+
+<div class="subtitle">
+Questionnaire confidentiel destiné à préparer
+votre consultation d'écoute et d'accompagnement.
+</div>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<form action="https://formsubmit.co/myteamsmadagascar@gmail.com"
+method="POST"
+enctype="multipart/form-data">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="merci.html">
+<input type="hidden" name="_subject"
+value="Nouveau pré-diagnostic psychologique">
+
+<!-- ETAPE 1 -->
+
+<div class="step active">
+
+<h3>👤 Informations personnelles</h3>
+
+<input type="text"
+name="Nom et prénom"
+id="nom"
+placeholder="Nom et prénom"
+required>
+
+<br><br>
+
+<input type="number"
+name="Âge"
+placeholder="Âge">
+
+<br><br>
+
+<select name="Sexe">
+<option>Femme</option>
+<option>Homme</option>
+<option>Autre</option>
+</select>
+
+<br><br>
+
+<input type="text"
+name="Téléphone"
+id="telephone"
+placeholder="Téléphone / WhatsApp">
+
+<br><br>
+
+<input type="email"
+name="Email"
+placeholder="Adresse email">
+
+</div>
+
+<!-- ETAPE 2 -->
+
+<div class="step">
+
+<h3>🧠 Motif principal</h3>
+
+<select name="Motif principal">
+
+<option>Stress / anxiété</option>
+<option>Fatigue mentale</option>
+<option>Dépression / tristesse</option>
+<option>Burn-out</option>
+<option>Traumatisme</option>
+<option>Difficultés relationnelles</option>
+<option>Conflit familial</option>
+<option>Problème de couple</option>
+<option>Isolement</option>
+<option>Écoute simple</option>
+
+</select>
+
+<br><br>
+
+<textarea
+name="Description problème"
+placeholder="Expliquez brièvement votre situation"></textarea>
+
+</div>
+
+<!-- ETAPE 3 -->
+
+<div class="step">
+
+<h3>❤️ État émotionnel actuel</h3>
+
+<select name="Humeur dominante">
+<option>Stable</option>
+<option>Stressée</option>
+<option>Anxieuse</option>
+<option>Triste</option>
+<option>Irritable</option>
+<option>Fatiguée</option>
+<option>Vide émotionnel</option>
+</select>
+
+<br><br>
+
+<select name="Qualité sommeil">
+<option>Bonne</option>
+<option>Moyenne</option>
+<option>Mauvaise</option>
+<option>Insomnie fréquente</option>
+</select>
+
+<br><br>
+
+<select name="Appétit">
+<option>Normal</option>
+<option>Augmenté</option>
+<option>Diminué</option>
+</select>
+
+<br><br>
+
+<select name="Niveau fatigue">
+<option>Faible</option>
+<option>Moyen</option>
+<option>Élevé</option>
+</select>
+
+</div>
+
+<!-- ETAPE 4 -->
+
+<div class="step">
+
+<h3>🩺 Santé & antécédents</h3>
+
+<textarea
+name="Antécédents médicaux"
+placeholder="Maladies, migraines, douleurs, hospitalisations..."></textarea>
+
+<br><br>
+
+<select name="Suivi médical actuel">
+<option>Oui</option>
+<option>Non</option>
+</select>
+
+<br><br>
+
+<h3>🧠 Suivi psychologique antérieur</h3>
+
+<select name="Suivi psychologique antérieur">
+
+<option>Aucun</option>
+<option>Psychologue</option>
+<option>Psychiatre</option>
+<option>Coach / accompagnement</option>
+<option>Suivi ancien terminé</option>
+<option>Suivi actuellement en cours</option>
+
+</select>
+
+<br><br>
+
+<textarea
+name="Détails suivi psychologique"
+placeholder="Précisez si nécessaire"></textarea>
+
+<br><br>
+
+<h3>💊 Médicaments & traitements</h3>
+
+<textarea
+name="Médicaments actuels"
+placeholder="Nom des médicaments, traitements ou compléments pris actuellement"></textarea>
+
+</div>
+
+<!-- ETAPE 5 -->
+
+<div class="step">
+
+<h3>🚬 Alcool, drogues & dépendances</h3>
+
+<select name="Tabagisme">
+
+<option>Non fumeur</option>
+<option>Fumeur occasionnel</option>
+<option>Fumeur régulier</option>
+<option>Ancien fumeur</option>
+
+</select>
+
+<br><br>
+
+<select name="Consommation alcool">
+
+<option>Aucune consommation d'alcool</option>
+<option>Occasionnelle</option>
+<option>Régulière</option>
+<option>Importante</option>
+
+</select>
+
+<br><br>
+
+<select name="Consommation drogue">
+
+<option>Aucune drogue ou stupéfiant</option>
+<option>Occasionnelle</option>
+<option>Régulière</option>
+<option>Ancienne consommation</option>
+
+</select>
+
+<br><br>
+
+<select name="Suspicion dépendance">
+
+<option>Non</option>
+<option>Possible dépendance alcool</option>
+<option>Possible dépendance drogue</option>
+<option>Dépendance sévère suspectée</option>
+
+</select>
+
+<br><br>
+
+<textarea
+name="Autres addictions"
+placeholder="Autres addictions éventuelles"></textarea>
+
+</div>
+
+<!-- ETAPE 6 -->
+
+<div class="step">
+
+<h3>⚠️ Problèmes comportementaux</h3>
+
+<select name="Comportement dominant">
+
+<option>Calme</option>
+<option>Irritable</option>
+<option>Agressif</option>
+<option>Impulsif</option>
+<option>Violence verbale</option>
+<option>Violence physique</option>
+<option>Isolement</option>
+<option>Comportement instable</option>
+
+</select>
+
+<br><br>
+
+<select name="Gestion émotions">
+
+<option>Bonne</option>
+<option>Difficile</option>
+<option>Très difficile</option>
+
+</select>
+
+<br><br>
+
+<select name="Conflits fréquents">
+
+<option>Non</option>
+<option>Oui occasionnellement</option>
+<option>Oui régulièrement</option>
+
+</select>
+
+<br><br>
+
+<textarea
+name="Description comportement"
+placeholder="Précisez certains comportements ou difficultés"></textarea>
+
+</div>
+
+<!-- ETAPE 7 -->
+
+<div class="step">
+
+<h3>❤️ Vie amoureuse & familiale</h3>
+
+<select name="Situation amoureuse">
+
+<option>Stable</option>
+<option>Instable</option>
+<option>Aucune relation actuellement</option>
+<option>Situation compliquée</option>
+<option>En séparation</option>
+
+</select>
+
+<br><br>
+
+<select name="Situation familiale">
+<option>Célibataire</option>
+<option>Marié(e)</option>
+<option>Divorcé(e)</option>
+<option>Veuf / Veuve</option>
+</select>
+
+<br><br>
+
+<input type="number"
+name="Nombre enfants"
+placeholder="Nombre d'enfants">
+
+<br><br>
+
+<textarea
+name="Relations importantes"
+placeholder="Relations familiales ou difficultés relationnelles"></textarea>
+
+</div>
+
+<!-- ETAPE 8 -->
+
+<div class="step">
+
+<h3>🙏 Religion & convictions</h3>
+
+<select name="Religion">
+
+<option>Chrétien(ne)</option>
+<option>Musulman(e)</option>
+<option>Aucune religion</option>
+<option>Autre</option>
+
+</select>
+
+<br><br>
+
+<textarea
+name="Convictions personnelles"
+placeholder="Valeurs, spiritualité, convictions personnelles"></textarea>
+
+<br><br>
+
+<select name="Souhaite accompagnement spirituel">
+
+<option>Oui</option>
+<option>Non</option>
+<option>À discuter</option>
+
+</select>
+
+</div>
+
+<!-- ETAPE 9 -->
+
+<div class="step">
+
+<h3>📅 Prise de rendez-vous</h3>
+
+<label>1er choix</label>
+<input type="datetime-local" name="Choix 1">
+
+<br><br>
+
+<label>2ème choix</label>
+<input type="datetime-local" name="Choix 2">
+
+<br><br>
+
+<label>3ème choix</label>
+<input type="datetime-local" name="Choix 3">
+
+<div class="summary">
+
+⏰ Créneaux disponibles :<br>
+• Lundi à Dimanche : 08h00 à 16h00<br>
+• Soir : 19h00 à 20h30<br><br>
+
+🕒 Durée : 30 minutes<br>
+💰 Tarif : 20 000 Ar / consultation
+
+</div>
+
+</div>
+
+<!-- ETAPE 10 -->
+
+<div class="step">
+
+<h3>💳 Paiement Money Mobile</h3>
+
+<div class="payment-box">
+
+👤 <strong>Bénéficiaire :</strong> Finiavana <br><br>
+
+📱 Orange Money :
+032 60 964 49 <br><br>
+
+📱 Airtel Money :
+033 29 430 07 <br><br>
+
+📱 Mvola :
+038 19 191 34 <br><br>
+
+💰 Tarif :
+20 000 Ar
+
+</div>
+
+<br>
+
+<input type="text"
+name="Référence paiement"
+placeholder="Référence de transaction">
+
+<br><br>
+
+<label>📤 Capture de paiement</label>
+
+<input type="file"
+name="Preuve paiement"
+accept="image/*,.pdf">
+
+</div>
+
+<!-- ETAPE 11 -->
+
+<div class="step">
+
+<h3>📄 Récapitulatif consultation</h3>
+
+<div class="receipt">
+
+<h2>REÇU & PRÉ-DIAGNOSTIC</h2>
+
+<div class="receipt-item">
+👤 <strong>Nom :</strong>
+<span id="recapNom"></span>
+</div>
+
+<div class="receipt-item">
+📞 <strong>Téléphone :</strong>
+<span id="recapTel"></span>
+</div>
+
+<div class="receipt-item">
+🕒 <strong>Durée :</strong>
+30 minutes
+</div>
+
+<div class="receipt-item">
+💰 <strong>Montant :</strong>
+20 000 Ar
+</div>
+
+<div class="badge">
+Consultation confidentielle
+</div>
+
+<div class="note">
+
+⚠️ Ce formulaire constitue uniquement
+un pré-diagnostic préparatoire.
+
+Il est possible que des examens médicaux,
+consultations complémentaires
+ou orientations spécialisées
+soient proposés selon les problématiques identifiées.
+
+</div>
+
+</div>
+
+<br>
+
+<button type="button"
+class="receipt-btn"
+onclick="window.print()">
+
+Télécharger / Imprimer le reçu
+
+</button>
+
+<br><br>
+
+<button type="submit"
+class="submit-btn">
+
+Envoyer ma demande
+
+</button>
+
+</div>
+
+</form>
+
+<div class="navigation">
+
+<button type="button"
+class="prev-btn"
+onclick="prevStep()">
+
+Retour
+
+</button>
+
+<button type="button"
+class="next-btn"
+onclick="nextStep()">
+
+Continuer
+
+</button>
+
+</div>
+
+<div class="confidentiel">
+🔒 Toutes les informations restent strictement confidentielles.
+</div>
+
+</div>
+
+<script>
+
+let currentStep = 0;
+
+const steps = document.querySelectorAll(".step");
+const progressBar = document.getElementById("progressBar");
+
+function showStep(index){
+
+steps.forEach((step,i)=>{
+
+step.classList.remove("active");
+
+if(i===index){
+step.classList.add("active");
+}
+
+});
+
+let progress=((index+1)/steps.length)*100;
+progressBar.style.width=progress+"%";
+
+if(index===0){
+document.querySelector(".prev-btn").style.visibility="hidden";
+}else{
+document.querySelector(".prev-btn").style.visibility="visible";
+}
+
+if(index===steps.length-1){
+
+document.querySelector(".next-btn").style.display="none";
+
+document.getElementById("recapNom").innerText =
+document.getElementById("nom").value;
+
+document.getElementById("recapTel").innerText =
+document.getElementById("telephone").value;
+
+}else{
+
+document.querySelector(".next-btn").style.display="block";
+
+}
+
+}
+
+function nextStep(){
+
+if(currentStep < steps.length-1){
+
+currentStep++;
+showStep(currentStep);
+
+}
+
+}
+
+function prevStep(){
+
+if(currentStep > 0){
+
+currentStep--;
+showStep(currentStep);
+
+}
+
+}
+
+showStep(currentStep);
+
+</script>
+
+</body>
+</html>
